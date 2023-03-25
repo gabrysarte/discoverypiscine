@@ -1,0 +1,35 @@
+body {
+	margin: 0;
+}
+
+div {
+	text-align: center;
+	color: white;
+}
+
+.parallax {
+	background-color: black;
+	background-attachment: fixed;
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 100vh;
+}
+
+.text {
+	position: relative;
+	top: 50%;
+}
+
+.block {
+	background-color: black;
+	height: 300px;
+}
+
+#img1 {
+	background-image: url("https://cuccioli-golden.it/wp-content/uploads/2021/03/pexels-chris-flaten-4232396.jpg");
+}
+
+#img2 {
+	background-image: url("https://www.tuttogreen.it/wp-content/uploads/2019/12/shutterstock_450886696.jpg");
+}

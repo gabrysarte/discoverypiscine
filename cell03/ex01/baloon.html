@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HOLA HOLA QUI SI SCOPPIA</title>
+	<style>
+		#balloon {
+			border: 1px snow solid;
+            margin: auto;
+            width: 50%;
+            }
+	</style>
+	<script>
+		let size = 200;
+		const colors = ['#e53935', '#315e26', '#2565ae'];
+		let ci = 0;
+		window.onload = () => {
+			const ball = document.getElementById('balloon');
+			setCircleSize(size, ci);
+			ball.addEventListener('click', () => setCircleSize(size + 10, ++ci));
+			ball.addEventListener('mouseleave', () => setCircleSize(size - 5, --ci));
+		}
+		function setCircleSize(newSize, nci) {
+			const ball = document.getElementById('balloon');
+			style = ball.style;
+			size = newSize > 420 || newSize < 200 ? 200 : newSize;
+			ci = (nci < 0) ? colors.length - 1 : (nci > colors.length - 1) ? 0 : nci;
+			style.width = size + 'px';
+			style.height = size + 'px';
+			style.borderRadius = size / 2 + 'px';
+			style.backgroundColor = colors[ci];
+		}
+	</script>
+</head>
+<body>
+	<div id="balloon"></div>
+</body>
+</html>
