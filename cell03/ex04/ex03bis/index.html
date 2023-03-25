@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js" integrity="sha256-0H3Nuz3aug3afVbUlsu12Puxva3CP4EhJtPExqs54Vg=" crossorigin="anonymous"></script>
+	<title>TO-DO</title>
+	<script src="todo.js"></script>
+	<style>
+		.container {
+			margin: 10px 20px 10px 20px;
+		}
+		.list {
+			width: fit-content;
+		}
+		.list h3 {
+			margin-bottom: 8px;
+		}
+		.list .list-items {
+			margin-left: 20px;
+		}
+		.list .list-item {
+			margin-top: 4px;
+			margin-bottom: 4px;
+		}
+		.list .list-item:hover {
+			cursor: pointer;
+		}
+		.list button {
+			width: 100%;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<ul class="list">
+			<h3>To do list</h3>
+			<div class="list-items" id="ft_list"></div>
+			<button onclick="newItem(event)">New!</button>
+		</ul>
+	</div>
+</body>
+</html>

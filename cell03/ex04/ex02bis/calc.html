@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<title>USE ME!</title>
+	<script>
+		let run;
+		$('document').ready(() => {
+			setTimeout(() => {
+				if (!run) {
+					alert('Please, use me...');
+				}
+			}, 30 * 1000);
+		})
+		function cal() {
+			run = true;
+			let result;
+			let text;
+			const nb1 = +$('#number1').val();
+			const nb2 = +$('#number2').val();
+			const sign = $( "#sign option:selected" ).text();
+			if (nb1 < 0 || nb2 < 0) {
+				text = 'Error :('
+			} else if (sign === '+') {
+				result = nb1 + nb2
+			} else if (sign === '-') {
+				result = nb1 - nb2
+			} else if (sign === '*') {
+				result = nb1 * nb2
+			} else if (sign === '%' && nb2 === 0) {
+				text = "It's over 9000!";
+			} else if (sign === '/' && nb2 === 0) {
+				text = "It's over 9000!";
+			}  else if (sign === '/') {
+				result = nb1 / nb2
+			} else {
+				result = nb1 % nb2
+			}
+			text = result === undefined ? text : `${nb1} ${sign} ${nb2} = ${result}`;
+			console.log(text);
+			alert(text);
+		}
+	</script>
+</head>
+<body>
+		<input type="number" name="number1" id="number1" placeholder="number">
+		<select name="sign" id="sign">
+			<option value="+">+</option>
+			<option value="-">-</option>
+			<option value="*">*</option>
+			<option value="/">/</option>
+			<option value="%">%</option>
+		</select>
+		<input type="number" name="number2" id="number2" placeholder="number">
+		<button onclick="cal()">Try me!</button>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<title>SCOPPIA TUTTO!</title>
+	<script>
+		let size = 200;
+		const INC = 10;
+		const DSC = 5;
+		const colors = ['#e53935', '#315e26', '#2565ae'];
+		let ci = 0;
+		$(document).ready(() => {
+			setCircle(size, ci);
+			$('#circle').click(() => setCircle(size + INC, ++ci))
+			$('#circle').mouseleave(() => setCircle(size - DSC, --ci))
+		});
+		function setCircle(newSize, newIndex) {
+			size = newSize > 420 || newSize < 200 ? 200 : newSize;
+			ci = newIndex < 0 ? colors.length - 1 :  newIndex > colors.length - 1 ? 0 : newIndex;
+			$('#circle').innerHeight(size);
+			$('#circle').innerWidth(size);
+			$('#circle').css('border-radius', size / 2);
+			$('#circle').css('background-color', colors[ci]);
+		}
+	</script>
+</head>
+<body>
+	<div id="circle"></div>
+</body>
+</html>
